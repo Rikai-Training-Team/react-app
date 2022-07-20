@@ -1,0 +1,10 @@
+.product-component {
+  width: 80vw;
+  padding: 1rem;
+}
+.product-container {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 0.33fr);
+}

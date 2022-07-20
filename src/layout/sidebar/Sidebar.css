@@ -1,0 +1,21 @@
+.sidebar {
+  height: 100vh;
+  width: 20vw;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+h2 {
+  color: #999;
+  line-height: 1.3;
+}
+input {
+  margin-left: 1rem;
+  margin-top: 0.2rem;
+}
+h4 {
+  line-height: 1.4;
+}
+.submit-btn {
+  margin-top: 1rem;
+  padding: 0.2rem;
+}

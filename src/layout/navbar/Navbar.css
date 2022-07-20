@@ -1,0 +1,29 @@
+.navbar {
+  background-color: #222f3f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-box button {
+  color: #000;
+  height: 2rem;
+  width: 2rem;
+  background-color: yellow;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-box input {
+  padding: 0.4rem 3rem 0.4rem 1rem;
+}
