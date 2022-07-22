@@ -30,7 +30,7 @@ function App() {
   }, [setError]);
   return (
     <div>
-      <Navbar />
+      <Navbar products={products} result={result} setResult={setResult} />
       <div style={{ display: 'flex' }}>
         <Sidebar
           result={result}

@@ -9,14 +9,26 @@ const ProductComponent = ({ products, setProducts, result, setResult, stringResu
   useEffect(() => {
     if (condition === 'featured') {
       return;
-    } else if (condition === 'desc') {
-      const temp = [...products];
-      const arr = temp.sort((pre, next) => next.price - pre.price);
-      setResult(arr);
-    } else if (condition === 'inc') {
-      const temp = [...products];
-      const arr = temp.sort((pre, next) => pre.price - next.price);
-      setResult(arr);
+    } else {
+      let temp;
+
+      if (condition === 'desc') {
+        if (result.length > 0) {
+          temp = [...result];
+        } else {
+          temp = [...products];
+        }
+        const arr = temp.sort((pre, next) => next.price - pre.price);
+        setResult(arr);
+      } else if (condition === 'inc') {
+        if (result.length > 0) {
+          temp = [...result];
+        } else {
+          temp = [...products];
+        }
+        const arr = temp.sort((pre, next) => pre.price - next.price);
+        setResult(arr);
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [condition]);
