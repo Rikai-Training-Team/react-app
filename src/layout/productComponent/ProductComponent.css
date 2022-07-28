@@ -1,10 +1,13 @@
 .product-component {
-  width: 80vw;
+  width: 85vw;
   padding: 1rem;
 }
 .product-container {
   margin-top: 2rem;
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(3, 0.33fr);
+  grid-template-columns: repeat(4, 0.25fr);
+}
+p {
+  text-align: center;
 }

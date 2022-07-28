@@ -1,0 +1,32 @@
+.search-box {
+  display: flex;
+}
+.search-box button {
+  color: #000;
+  background-color: yellow;
+  border: 1px solid transparent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-right-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.search-box input {
+  padding: 0.5rem 5rem 0.5rem 1rem;
+  border: 1px solid transparent;
+
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+.search-box input:focus {
+  border: 1px solid yellow;
+}
+form {
+  display: flex;
+}
+.icon {
+  height: 1rem;
+
+  padding: 0 2rem;
+}

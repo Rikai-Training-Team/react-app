@@ -1,52 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import SortComponent from './sortComponent/SortComponent';
+import React, { useContext, useEffect, useState } from 'react';
+import { ProductContext } from '../../App';
+import ProductCard from '../../components/ProductCard/ProductCard';
+import { SET_PRODUCTS } from '../../constant/type';
+import Pagination from './pagination/Pagination';
 import './ProductComponent.css';
-import ProductCard from '../../components/productCard/ProductCard';
+import SortComponent from './sortComponent/SortComponent';
 
-const ProductComponent = ({ products, setProducts, result, setResult, stringResult, setStringResult }) => {
+const ProductComponent = ({ result, setResult, stringResult, setStringResult }) => {
   const [condition, setCondition] = useState('');
+  const { productState, productDispatch } = useContext(ProductContext);
 
   useEffect(() => {
     if (condition === 'featured') {
       return;
     } else {
       let temp;
-
+      if (productState.products.length > 0) {
+        temp = productState.products;
+      } else {
+        temp = productState.initProducts;
+      }
       if (condition === 'desc') {
-        if (result.length > 0) {
-          temp = [...result];
-        } else {
-          temp = [...products];
-        }
         const arr = temp.sort((pre, next) => next.price - pre.price);
-        setResult(arr);
+        productDispatch({ type: SET_PRODUCTS, result: arr });
       } else if (condition === 'inc') {
-        if (result.length > 0) {
-          temp = [...result];
-        } else {
-          temp = [...products];
-        }
         const arr = temp.sort((pre, next) => pre.price - next.price);
-        setResult(arr);
+        productDispatch({ type: SET_PRODUCTS, result: arr });
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [condition]);
+  }, [productState.initProducts, condition, productDispatch, productState.products]);
   return (
     <div className='product-component'>
       <SortComponent condition={condition} setCondition={setCondition} />
-      {result.length === 0 && (
-        <div className='product-container'>
-          {products && products.map((product) => <ProductCard key={product.id} product={product} />)}
-        </div>
-      )}
-      {result.length > 0 && (
-        <div className='product-container'>
-          {result.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      )}
+      <div className='product-container'>
+        {productState.products.length > 0 &&
+          productState.products.map((product) => <ProductCard key={product.id} product={product} />)}
+      </div>
+      {productState.message && <p>{productState.message}</p>}
+      {!productState.message && <Pagination />}
     </div>
   );
 };

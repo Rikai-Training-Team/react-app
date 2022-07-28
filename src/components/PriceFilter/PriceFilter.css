@@ -1,0 +1,12 @@
+.price-form {
+  display: flex;
+  flex-direction: column;
+}
+.price-form label {
+  font-size: 0.7rem;
+}
+.price-form button {
+  padding: 0 1rem;
+  width: fit-content;
+  align-self: center;
+}

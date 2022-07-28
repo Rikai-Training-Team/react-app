@@ -1,0 +1,14 @@
+.list-filter {
+  font-size: 0.8rem;
+}
+.list-filter li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.list-filter .sub-list {
+  padding-left: 1rem;
+}
+.list-filter .icon {
+  height: 0.8rem;
+  padding: 0;
+}
