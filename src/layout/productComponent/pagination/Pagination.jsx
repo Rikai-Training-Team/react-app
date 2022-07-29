@@ -4,7 +4,7 @@ import { SET_PRODUCTS } from '../../../constant/type';
 import './Pagination.css';
 
 const Pagination = () => {
-  const limit = 10;
+  const limit = 8;
 
   const [currentPage, setCurrentPage] = useState(1);
   const [pageNumbers, setPageNumbers] = useState([]);

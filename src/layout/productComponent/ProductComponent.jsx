@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ProductContext } from '../../App';
-import ProductCard from '../../components/ProductCard/ProductCard';
+import ProductCard from '../../components/productCard/ProductCard';
 import { SET_PRODUCTS } from '../../constant/type';
 import Pagination from './pagination/Pagination';
-import './ProductComponent.css';
 import SortComponent from './sortComponent/SortComponent';
+import './ProductComponent.css';
 
-const ProductComponent = ({ result, setResult, stringResult, setStringResult }) => {
+const ProductComponent = () => {
   const [condition, setCondition] = useState('');
   const { productState, productDispatch } = useContext(ProductContext);
 
